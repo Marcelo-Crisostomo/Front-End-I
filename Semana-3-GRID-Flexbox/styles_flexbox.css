@@ -1,0 +1,83 @@
+/* Estilos básicos */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f5;
+}
+/* Estilo del encabezado */
+.header {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+/* Estilos básicos */
+body, html {
+    margin: 0; /* Elimina el margen por defecto de la página y del body */
+    padding: 0; /* Elimina el relleno por defecto de la página y del body */
+    box-sizing: border-box; /* Hace que el padding y el borde se incluyan en el ancho y la altura total de los elementos */
+    font-family: Arial, sans-serif; /* Define la fuente de todo el documento como Arial, con sans-serif como alternativa */
+    background-color: #f0f0f5; /* Aplica un color de fondo claro a la página */
+}
+/* Estilo del encabezado */
+.header {
+    background-color: #3498db; /* Define el color de fondo del encabezado en un tono azul */
+    color: #ffffff; /* Establece el color de texto del encabezado en blanco */
+    padding: 20px; /* Añade un espacio interno de 20px alrededor del contenido en el encabezado */
+    text-align: center; /* Centra el contenido del encabezado horizontalmente */
+}
+.header h1 {
+    margin: 0; /* Elimina el margen por defecto del h1 en el encabezado */
+    font-size: 2em; /* Aumenta el tamaño de fuente del h1 para que sea más grande */
+}
+/* Contenedor principal de Flexbox */
+.flex-container {
+    display: flex; /* Define el contenedor como un Flexbox para poder aplicar las propiedades flexibles */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples filas cuando el espacio es insuficiente */
+    justify-content: center; /* Centra los elementos dentro del contenedor en el eje principal (horizontal) */
+    align-content: space-around; /* Distribuye el espacio entre las filas de elementos dentro del contenedor */
+    padding: 20px; /* Añade un relleno de 20px alrededor del contenedor para separar los elementos del borde */
+}
+/* Estilo de cada tarjeta (elemento flexible) */
+.flex-item {
+    flex-basis: calc(33.333% - 20px); /* Define el ancho base de cada tarjeta, ocupando un tercio del contenedor menos el espacio entre tarjetas */
+    background-color: #ffffff; /* Establece el color de fondo de las tarjetas en blanco */
+    color: #333333; /* Define el color de texto dentro de las tarjetas en un tono gris oscuro */
+    padding: 20px; /* Añade un espacio interno de 20px alrededor del contenido de cada tarjeta */
+    margin: 10px; /* Añade un margen externo de 10px alrededor de cada tarjeta para separarlas entre sí */
+    border-radius: 8px; /* Aplica bordes redondeados de 8px a cada tarjeta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega una sombra sutil a cada tarjeta para dar un efecto de profundidad */
+    text-align: center; /* Centra el texto dentro de las tarjetas */
+    font-size: 1.1em; /* Aumenta ligeramente el tamaño de la fuente dentro de cada tarjeta */
+    transition: transform 0.2s ease-in-out; /* Define una transición suave para el efecto de escala al hacer hover */
+}
+
+.flex-item:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño de la tarjeta cuando se pasa el mouse sobre ella */
+}
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .flex-item {
+        flex-basis: calc(50% - 20px); /* Cambia el ancho base de cada tarjeta para ocupar el 50% del contenedor en pantallas medianas */
+    }
+}
+@media (max-width: 480px) {
+    .flex-item {
+        flex-basis: 100%; /* Hace que cada tarjeta ocupe el 100% del contenedor en pantallas pequeñas */
+        max-width: 400px; /* Establece un ancho máximo para evitar que las tarjetas sean demasiado anchas en dispositivos móviles */
+    }
+    .flex-container {
+        justify-content: center; /* Centra los elementos dentro del contenedor en pantallas pequeñas */
+    }
+}
+/* Estilo del pie de página */
+.footer {
+    background-color: #333333; /* Establece el color de fondo del pie de página en gris oscuro */
+    color: #ffffff; /* Define el color de texto en blanco para mayor contraste */
+    text-align: center; /* Centra el texto del pie de página horizontalmente */
+    padding: 15px; /* Añade un espacio interno de 15px alrededor del texto */
+    font-size: 0.9em; /* Reduce ligeramente el tamaño del texto en el pie de página */
+}
+

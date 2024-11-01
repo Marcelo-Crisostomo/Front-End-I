@@ -1,0 +1,62 @@
+@media (condición) {
+    /* Estilos CSS específicos */
+}
+
+@media (max-width: 768px) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 600px) {
+    .contenedor {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Estilos para pantallas medianas */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .contenedor {
+        font-size: 16px;
+        padding: 20px;
+    }
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 1025px) {
+    .contenedor {
+        font-size: 18px;
+        padding: 30px;
+    }
+}
+
+/* Estilos para orientación vertical */
+@media (orientation: portrait) {
+    .sidebar {
+        display: none; /* Oculta la barra lateral en modo vertical */
+    }
+}
+
+/* Estilos para orientación horizontal */
+@media (orientation: landscape) {
+    .sidebar {
+        display: block; /* Muestra la barra lateral en modo horizontal */
+    }
+}
+
+/* Estilos para pantallas de alta resolución */
+@media only screen and (min-resolution: 2dppx) {
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Estilos para pantallas grandes en modo horizontal */
+@media (min-width: 1024px) and (orientation: landscape) {
+    .menu {
+        font-size: 20px;
+    }
+}

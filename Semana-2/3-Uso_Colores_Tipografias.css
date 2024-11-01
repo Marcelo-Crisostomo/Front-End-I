@@ -1,0 +1,14 @@
+h1{
+color: #3498db;     /* Color hexadecimal */
+color: rgb(52, 152, 219); /* Color RGB */
+color: rgba(52, 152, 219, 0.8); /* Color RGBA con transparencia */
+color: blue/* Color por nombre */
+}
+
+h2 {
+    font-family: 'Arial', sans-serif; /* Define la familia de fuentes para el texto del encabezado h2. En este caso, se usa Arial como fuente principal y sans-serif como alternativa */
+    font-size: 16px; /* Establece el tamaño de la fuente en 16 píxeles para el encabezado h2 */
+    font-weight: bold; /* Aplica un grosor de fuente negrita (bold) al texto para hacerlo más destacado */
+    line-height: 1.5; /* Define la altura de línea como 1.5 veces el tamaño de la fuente, lo que aumenta el espacio entre líneas y mejora la legibilidad */
+    text-align: center; /* Alinea el texto del encabezado h2 al centro del elemento contenedor */
+}

@@ -1,0 +1,9 @@
+:root {
+    --color-principal: #3498db; /* Define una variable global llamada 'color-principal' con el valor de color hexadecimal #3498db (un tono azul claro) */
+    --tamano-fuente: 16px; /* Define una variable global llamada 'tamano-fuente' con el valor de tamaño de fuente de 16 píxeles */
+}
+
+h1 {
+    color: var(--color-principal); /* Aplica el color de texto al encabezado h1 utilizando la variable 'color-principal' definida en :root */
+    font-size: var(--tamano-fuente); /* Establece el tamaño de fuente del encabezado h1 usando la variable 'tamano-fuente' definida en :root */
+}

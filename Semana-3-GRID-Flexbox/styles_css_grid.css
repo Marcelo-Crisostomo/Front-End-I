@@ -1,0 +1,95 @@
+/* Estilos básicos */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f5;
+    height: 100%; /* Asegura que el body ocupe el 100% de la ventana */
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Define tres filas: header, contenido, footer */
+}
+/* Estilo del encabezado */
+.header {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+.header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+/* Contenedor principal de CSS Grid */
+.grid-container {
+    display: grid; /* Define el contenedor como una cuadrícula */
+    grid-template-columns: repeat(3, 1fr); /* Crea tres columnas de igual tamaño */
+    gap: 20px; /* Espacio entre los elementos de la cuadrícula */
+    padding: 20px;
+}
+/* Estilo de cada elemento en la cuadrícula */
+.grid-item {
+    background-color: #ffffff;
+    color: #333333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 1.1em;
+    transition: transform 0.2s ease-in-out;
+}
+.grid-item:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+/* Estilos del formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+form h2 {
+    margin-top: 0;
+}
+
+input[type="text"], input[type="email"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+button {
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+button:hover {
+    background-color: #297db8;
+}
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+}
+
+.footer {
+    position: fixed; /* Fija el footer en una posición específica en la ventana */
+    bottom: 0; /* Coloca el footer en la parte inferior de la ventana */
+    left: 0; /* Alinea el footer al borde izquierdo */
+    width: 100%; /* Asegura que el footer ocupe todo el ancho de la ventana */
+    background-color: #333333;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+    z-index: 10; /* Asegura que el footer esté por encima de otros elementos si es necesario */
+}

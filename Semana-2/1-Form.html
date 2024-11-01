@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/submit-form" method="post">
+        <label for="nombre">Nombre:</label>
+    <br>
+        <input type="text" id="nombre" name="nombre" required>
+        <br><br>
+    
+        <label for="email">Correo Electrónico:</label>
+        <br>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        
+        <label for="mensaje">Mensaje:</label>
+        <br>
+        <textarea id="mensaje" name="mensaje" rows="4" cols="50"></textarea>
+        <br><br>
+        
+        <label for="interes">Área de Interés:</label>
+        <br>
+        <select id="interes" name="interes">
+            <option value="desarrollo">Desarrollo Web</option>
+            <option value="diseño">Diseño Gráfico</option>
+            <option value="marketing">Marketing Digital</option>
+        </select>
+        <br><br>
+        
+        <button type="submit">Enviar</button>
+    </form>
+    
+</body>
+</html>

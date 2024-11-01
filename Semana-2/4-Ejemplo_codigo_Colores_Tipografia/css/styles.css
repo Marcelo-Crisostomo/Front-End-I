@@ -1,0 +1,56 @@
+:root {/* Definición de variables globales en :root */
+    --fuente-principal: 'Arial', sans-serif; /* Variable para la fuente principal utilizada en todo el sitio */
+    --color-fondo: #f4f4f9; /* Color de fondo principal para la página */
+    --color-texto: #333; /* Color de texto general */
+    --color-acento: #3498db; /* Color de acento (azul) para resaltar elementos específicos */
+    --color-texto-claro: #ffffff; /* Color de texto claro, usado sobre fondos oscuros */
+}
+/* Estilos generales del cuerpo de la página */
+body {
+    font-family: var(--fuente-principal); /* Usa la fuente definida en la variable --fuente-principal */
+    background-color: var(--color-fondo); /* Aplica el color de fondo definido en --color-fondo */
+    color: var(--color-texto); /* Establece el color de texto general con la variable --color-texto */
+    margin: 0; /* Elimina el margen por defecto del body */
+    padding: 0; /* Elimina el relleno por defecto del body */
+    line-height: 1.6; /* Define la altura de línea para mejorar la legibilidad */
+}
+/* Estilos para la cabecera */
+.header {
+    background-color: var(--color-acento); /* Usa el color de acento para el fondo de la cabecera */
+    color: var(--color-texto-claro); /* Color del texto claro sobre el fondo de acento */
+    text-align: center; /* Centra el texto dentro de la cabecera */
+    padding: 20px; /* Añade espacio interno alrededor del contenido de la cabecera */
+}
+.header h1 {
+    font-size: 2.5em; /* Ajusta el tamaño del texto principal para destacar el título */
+    margin: 0; /* Elimina el margen del título */
+}
+.subtitle {
+    font-size: 1.2em; /* Tamaño de fuente ligeramente más pequeño para el subtítulo */
+    font-weight: lighter; /* Hace el texto menos grueso para un efecto visual suave */
+}
+/* Estilos para el contenedor principal */
+.content {
+    padding: 20px; /* Añade espacio interno para separar el contenido del borde */
+}
+/* Estilos para la sección de contenido con fondo blanco */
+.box {
+    background-color: var(--color-texto-claro); /* Fondo blanco para la caja de contenido */
+    border: 2px solid var(--color-acento); /* Borde de 2 píxeles usando el color de acento */
+    padding: 20px; /* Espacio interno dentro de la caja */
+    margin: 20px 0; /* Margen arriba y abajo para separar la caja de otros elementos */
+    border-radius: 8px; /* Bordes redondeados para un diseño más moderno */
+    text-align: center; /* Centra el texto dentro de la caja */
+}
+.box h2 {
+    color: var(--color-acento); /* Aplica el color de acento al título dentro de la caja */
+    font-size: 1.8em; /* Tamaño de fuente más grande para hacer destacar el título */
+}
+/* Estilos para el pie de página */
+.footer {
+    background-color: var(--color-texto); /* Fondo oscuro para el pie de página */
+    color: var(--color-texto-claro); /* Texto claro sobre el fondo oscuro */
+    text-align: center; /* Centra el texto en el pie de página */
+    padding: 10px; /* Añade un pequeño relleno alrededor del texto */
+    font-size: 0.9em; /* Reduce ligeramente el tamaño del texto */
+}
