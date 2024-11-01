@@ -20,7 +20,7 @@
 @media (min-width: 601px) and (max-width: 1024px) {
     .contenedor {
         font-size: 16px;
-        padding: 20px;
+        padding: 20px; 
     }
 }
 
