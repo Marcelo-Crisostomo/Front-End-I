@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> <!-- Codificación para soportar caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Diseño responsivo -->
+    <title>Introducción a JavaScript</title>
+</head>
+<body>
+    <h1 id="titulo">Introducción a JavaScript</h1>
+    <p id="resultado"></p> <!-- Aquí se mostrarán resultados de las operaciones -->
+    <!-- Zona para incluir los scripts de JavaScript -->
+    <script>
+        // 1. Declaración de variables
+        let saludo = "¡Hola, Mundo!"; // Variable de texto
+        const PI = 3.1416; // Constante, su valor no cambia
+        // 2. Mostrar información en la consola
+        console.log(saludo); // Imprime el saludo en la consola
+        console.log("El valor de PI es:", PI);
+        // 3. Función básica
+        function suma(a, b) {
+            return a + b; // Retorna la suma de los parámetros
+        }
+        console.log("La suma de 5 y 3 es:", suma(5, 3)); // Llama a la función y muestra el resultado
+        // 4. Manipulación del DOM
+        const titulo = document.getElementById('titulo'); // Selecciona el elemento con ID 'titulo'
+        titulo.style.color = 'blue'; // Cambia el color del título a azul
+        // 5. Estructuras de control
+        let edad = 20;
+        if (edad >= 18) {
+            console.log("Eres mayor de edad");
+        } else {
+            console.log("Eres menor de edad");
+        }
+        // 6. Arreglos y bucles
+        let frutas = ["Manzana", "Banana", "Cereza"];
+        console.log("Lista de frutas:");
+        frutas.forEach((fruta, index) => {
+            console.log(`${index + 1}. ${fruta}`); // Imprime cada fruta con su posición
+        });
+        // 7. Objetos y propiedades
+        let persona = {
+            nombre: "Marcelo",
+            edad: 30,
+            profesion: "Desarrollador"
+        };
+        console.log(`Hola, soy ${persona.nombre}, tengo ${persona.edad} años y soy ${persona.profesion}.`);
+        // 8. Eventos
+        const resultado = document.getElementById('resultado');
+        titulo.addEventListener('click', () => {
+            resultado.textContent = "¡Has hecho clic en el título!"; // Cambia el texto al hacer clic
+        });
+        // 9. Fetch API básico (simula carga de datos)
+        fetch('https://jsonplaceholder.typicode.com/posts/1')
+            .then(response => response.json())
+            .then(data => {
+                console.log("Datos cargados desde la API:", data);
+                resultado.textContent += ` | Datos cargados: ${data.title}`;
+            })
+            .catch(error => console.error("Error al cargar los datos:", error));
+    </script>
+</body>
+</html>

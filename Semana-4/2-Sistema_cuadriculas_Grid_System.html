@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> <!-- Codificación para caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Asegura diseño responsivo -->
+    <title>Ejemplo de Grid System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container"> <!-- Contenedor principal que proporciona márgenes automáticos -->
+        <h1 class="text-center my-4">Ejemplo de Grid System</h1> <!-- Título centrado con margen superior e inferior -->
+        <div class="row"> <!-- Fila principal -->
+            <!-- Columna 1: Ocupa 4 espacios en pantallas medianas y superiores, 6 en pantallas pequeñas -->
+            <div class="col-md-4 col-sm-6 bg-primary text-white text-center p-3">Columna 1</div>
+            <!-- Columna 2: Ocupa 4 espacios en pantallas medianas y superiores, 6 en pantallas pequeñas -->
+            <div class="col-md-4 col-sm-6 bg-secondary text-white text-center p-3">Columna 2</div>
+            <!-- Columna 3: Ocupa 4 espacios en pantallas medianas y superiores, y toda la fila en pantallas pequeñas -->
+            <div class="col-md-4 col-sm-12 bg-success text-white text-center p-3">Columna 3</div>
+        </div>
+        <!-- Segunda fila -->
+        <div class="row mt-4"> <!-- Fila con margen superior -->
+            <!-- Columna 1: Ocupa 6 espacios en pantallas medianas y superiores -->
+            <div class="col-md-6 bg-info text-white text-center p-3">Columna 4</div>
+            <!-- Columna 2: Ocupa 6 espacios en pantallas medianas y superiores -->
+            <div class="col-md-6 bg-warning text-dark text-center p-3">Columna 5</div>
+        </div>
+
+        <!-- Tercera fila con columnas de ancho automático -->
+        <div class="row mt-4"> 
+            <!-- Columna con ancho automático -->
+            <div class="col bg-light text-dark text-center p-3">Columna 6 (Ancho Automático)</div>
+            <!-- Columna con ancho automático -->
+            <div class="col bg-dark text-white text-center p-3">Columna 7 (Ancho Automático)</div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

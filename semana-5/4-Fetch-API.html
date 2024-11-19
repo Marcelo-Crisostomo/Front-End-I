@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> <!-- Configuración de codificación para caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Diseño responsivo -->
+    <title>Fetch API en E-commerce</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .producto {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Catálogo de Productos</h1>
+    <div id="productos">
+        <!-- Los productos se cargarán aquí dinámicamente -->
+    </div>
+
+    <script>
+        // Selección del contenedor donde se mostrarán los productos
+        const contenedorProductos = document.getElementById('productos');
+
+        // Uso de Fetch API para obtener datos de una API pública
+        fetch('https://fakestoreapi.com/products')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error al obtener los datos'); // Manejo de errores de respuesta
+                }
+                return response.json(); // Convertir la respuesta en JSON
+            })
+            .then(data => {
+                // Recorrer los datos y mostrar productos en el DOM
+                data.forEach(producto => {
+                    const divProducto = document.createElement('div');
+                    divProducto.classList.add('producto');
+                    divProducto.innerHTML = `
+                        <h3>${producto.title}</h3>
+                        <img src="${producto.image}" alt="${producto.title}" style="width: 100px; height: auto;">
+                        <p>Precio: $${producto.price}</p>
+                    `;
+                    contenedorProductos.appendChild(divProducto); // Agregar producto al contenedor
+                });
+            })
+            .catch(error => {
+                // Mostrar error en la consola
+                console.error('Error al cargar los productos:', error);
+                contenedorProductos.innerHTML = '<p>Hubo un error al cargar los productos.</p>';
+            });
+    </script>
+</body>
+</html>

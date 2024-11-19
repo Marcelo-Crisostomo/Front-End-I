@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> <!-- Codificación para caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Diseño responsivo -->
+    <title>Eventos en un E-commerce</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .producto {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+        }
+        .carrito {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Productos Disponibles</h1>
+    <div id="productos">
+        <!-- Los productos se cargarán dinámicamente aquí -->
+    </div>
+    <div class="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="carrito">
+            <!-- Aquí se mostrarán los productos añadidos -->
+        </ul>
+    </div>
+
+    <script>
+        // Lista de productos simulada
+        const productos = [
+            { id: 1, nombre: "Camiseta", precio: 19.99 },
+            { id: 2, nombre: "Pantalón", precio: 39.99 },
+            { id: 3, nombre: "Zapatos", precio: 59.99 }
+        ];
+
+        // Selección de elementos en el DOM
+        const contenedorProductos = document.getElementById('productos');
+        const carrito = document.getElementById('carrito');
+
+        // Mostrar productos en la página
+        productos.forEach(producto => {
+            const divProducto = document.createElement('div');
+            divProducto.classList.add('producto');
+            divProducto.innerHTML = `
+                <h3>${producto.nombre}</h3>
+                <p>Precio: $${producto.precio.toFixed(2)}</p>
+                <button data-id="${producto.id}" class="btn-agregar">Agregar al Carrito</button>
+            `;
+            contenedorProductos.appendChild(divProducto);
+        });
+
+        // Manejo de eventos para agregar productos al carrito
+        contenedorProductos.addEventListener('click', (e) => {
+            if (e.target.classList.contains('btn-agregar')) {
+                const idProducto = e.target.dataset.id;
+                const producto = productos.find(p => p.id == idProducto);
+
+                // Crear elemento para el carrito
+                const itemCarrito = document.createElement('li');
+                itemCarrito.textContent = `${producto.nombre} - $${producto.precio.toFixed(2)}`;
+                carrito.appendChild(itemCarrito);
+            }
+        });
+    </script>
+</body>
+</html>
