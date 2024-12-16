@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo DOM Sencillo</title>
+</head>
+<body>
+  <h1>Lista de Compras</h1>
+  <ul id="lista"></ul>
+  <button id="agregarProducto">Agregar Producto</button>
+
+  <script>
+    // Seleccionamos el botón y la lista
+    const boton = document.getElementById("agregarProducto");
+    const lista = document.getElementById("lista");
+
+    // Añadimos un evento al botón
+    boton.addEventListener("click", () => {
+      // Creamos un nuevo elemento <li>
+      const nuevoItem = document.createElement("li");
+      nuevoItem.textContent = "Nuevo Producto";
+
+      // Añadimos el elemento <li> a la lista
+      lista.appendChild(nuevoItem);
+    });
+  </script>
+</body>
+</html>

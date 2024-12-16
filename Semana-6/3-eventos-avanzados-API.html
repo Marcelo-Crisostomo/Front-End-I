@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> <!-- Codificación UTF-8 para soportar caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Diseño responsivo -->
+    <title>E-commerce con Eventos y API</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        /* Estilos específicos para imágenes */
+        .card-img-top {
+            width: 100%; /* Ajustar el ancho al contenedor */
+            height: 400px; /* Fijar altura de las imágenes */
+            object-fit: cover; /* Ajustar la imagen sin deformarla */
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-4">
+        <!-- Título principal -->
+        <h1 class="text-center">Catálogo de Productos</h1>
+        <!-- Contenedor dinámico para los productos -->
+        <div id="productos" class="row mt-4"></div>
+
+        <!-- Sección del carrito -->
+        <h2 class="mt-5">Carrito de Compras</h2>
+        <ul id="carrito" class="list-group mb-3"></ul> <!-- Lista de productos agregados -->
+        <p id="total" class="fw-bold">Total: $0.00</p> <!-- Total acumulado -->
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script personalizado -->
+    <script>
+        // Seleccionar contenedores
+        const productosContainer = document.getElementById('productos');
+        const carritoContainer = document.getElementById('carrito');
+        const totalContainer = document.getElementById('total');
+
+        // Variables para manejar el carrito
+        let carrito = []; // Array para almacenar los productos
+        let total = 0; // Total acumulado
+
+        // Cargar productos desde la API externa
+        fetch('https://fakestoreapi.com/products') // Llamada a la API pública
+            .then(response => response.json()) // Convertir la respuesta a JSON
+            .then(data => {
+                data.forEach(producto => {
+                    // Crear una tarjeta para cada producto
+                    const productoHTML = `
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <img src="${producto.image}" class="card-img-top" alt="${producto.title}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${producto.title}</h5> <!-- Título del producto -->
+                                    <p class="card-text">$${producto.price.toFixed(2)}</p> <!-- Precio del producto -->
+                                    <button class="btn btn-primary btn-agregar" 
+                                            data-id="${producto.id}" 
+                                            data-title="${producto.title}" 
+                                            data-price="${producto.price}">
+                                        Agregar al Carrito
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    // Añadir la tarjeta al contenedor de productos
+                    productosContainer.innerHTML += productoHTML;
+                });
+
+                // Añadir eventos a los botones de "Agregar al Carrito"
+                document.querySelectorAll('.btn-agregar').forEach(boton => {
+                    boton.addEventListener('click', () => {
+                        // Obtener los datos del producto desde los atributos del botón
+                        const id = boton.getAttribute('data-id');
+                        const title = boton.getAttribute('data-title');
+                        const price = parseFloat(boton.getAttribute('data-price'));
+
+                        // Añadir el producto al carrito
+                        carrito.push({ id, title, price });
+                        total += price; // Actualizar el total
+
+                        // Actualizar la interfaz
+                        const itemHTML = `<li class="list-group-item">${title} - $${price.toFixed(2)}</li>`;
+                        carritoContainer.innerHTML += itemHTML; // Añadir el producto al listado del carrito
+                        totalContainer.textContent = `Total: $${total.toFixed(2)}`; // Mostrar el total actualizado
+                    });
+                });
+            })
+            .catch(error => console.error('Error al cargar los productos:', error)); // Manejar errores
+    </script>
+</body>
+</html>

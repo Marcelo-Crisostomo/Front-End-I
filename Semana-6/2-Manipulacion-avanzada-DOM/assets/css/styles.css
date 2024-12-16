@@ -1,0 +1,75 @@
+/* Estilos globales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Color de fondo suave */
+    margin: 0;
+    padding: 0;
+}
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+/* Encabezado */
+header {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+/* Estilo para productos */
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagen de producto */
+.product img {
+    max-width: 100px;
+    border-radius: 5px;
+}
+
+/* Detalles del producto */
+.product-details {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+/* Botón agregar al carrito */
+.product button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.product button:hover {
+    background-color: #0056b3;
+}
+/* Lista del carrito */
+.cart ul {
+    list-style-type: none;
+    padding: 0;
+}
+.cart li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+/* Encabezado del carrito */
+.cart h2 {
+    margin-top: 20px;
+    color: #333;
+}
